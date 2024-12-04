@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.run.server)
     alias(libs.plugins.paperweight)
     alias(libs.plugins.shadow)
+    kotlin("plugin.serialization") version "2.0.0"
 }
 
 group = "de.joker"
@@ -16,6 +17,8 @@ repositories {
 
 dependencies {
     paperweight.paperDevBundle(libs.versions.minecraftVersion.get() + "-R0.1-SNAPSHOT")
+
+    paperLibrary(libs.serialization)
 }
 
 tasks {
@@ -33,8 +36,6 @@ tasks {
     }
 
     shadowJar {
-        mergeServiceFiles()
-        configurations = listOf(project.configurations.shadow.get())
         archiveFileName.set("PluginTemplate.jar")
     }
 }
@@ -45,6 +46,7 @@ kotlin {
 paper {
     main = "de.joker.template.PluginInstance"
     loader = "de.joker.template.DependencyLoader"
+    bootstrapper = "de.joker.template.CommandBootstrapper"
     apiVersion = "1.19"
     name = "PluginTemplate"
     authors = listOf("InvalidJoker")
