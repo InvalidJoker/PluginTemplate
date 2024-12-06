@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.run.server)
     alias(libs.plugins.paperweight)
     alias(libs.plugins.shadow)
-    kotlin("plugin.serialization") version "2.0.0"
+    kotlin("plugin.serialization") version "2.1.0"
 }
 
 group = "de.joker"
