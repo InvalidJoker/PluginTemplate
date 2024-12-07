@@ -20,4 +20,5 @@ enum class MessageFormat(private val format: String) {
         if (args == null) sender.sendMessage(text(Variables.PREFIX + format.format(message)))
         else sender.sendMessage(text(Variables.PREFIX + format.format(args, message)))
     }
+
 }
