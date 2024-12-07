@@ -20,8 +20,6 @@ class ItemClickListener : Listener {
     }
 
 
-
-
     @EventHandler
     fun onInventoryClick(event: InventoryClickEvent) {
         val player = event.whoClicked as? Player ?: return

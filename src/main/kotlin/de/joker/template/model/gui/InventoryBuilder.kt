@@ -1,5 +1,6 @@
 package de.joker.template.model.gui
 
+import de.joker.template.listeners.ItemClickListener
 import net.kyori.adventure.text.Component
 import org.bukkit.Bukkit
 import org.bukkit.entity.Player
