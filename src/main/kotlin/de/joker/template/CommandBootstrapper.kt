@@ -18,5 +18,4 @@ class CommandBootstrapper : PluginBootstrap {
             commands.register(ExampleCommand.register())
         }
     }
-
 }
