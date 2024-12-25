@@ -19,6 +19,7 @@ dependencies {
     paperweight.paperDevBundle(libs.versions.minecraftVersion.get() + "-R0.1-SNAPSHOT")
 
     paperLibrary(libs.serialization)
+    paperLibrary(kotlin("reflect"))
 }
 
 tasks {
