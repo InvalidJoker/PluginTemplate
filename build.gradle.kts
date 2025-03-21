@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "2.1.0"
+    kotlin("jvm") version "2.1.20"
     alias(libs.plugins.paper.yml)
     alias(libs.plugins.run.server)
     alias(libs.plugins.paperweight)
