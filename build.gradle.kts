@@ -27,7 +27,6 @@ dependencies {
 
     paperLibrary(libs.kotlinx.serialization.json)
     paperLibrary(kotlin("stdlib"))
-    paperLibrary(kotlin("reflect"))
 
     paperLibrary(libs.kutils.paper)
     paperLibrary(libs.kutils.adventure)
