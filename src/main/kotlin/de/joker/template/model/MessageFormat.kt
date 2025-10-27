@@ -1,6 +1,6 @@
 package de.joker.template.model
 
-import de.joker.template.extensions.text
+import de.joker.kutils.adventure.send
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 
@@ -12,13 +12,13 @@ enum class MessageFormat(private val format: String) {
     SUCCESS("<color:#63ff9a>%s");
 
     fun sendPlayer(player: Player, message: String, args: String? = null) {
-        if (args == null) player.sendMessage(text(Variables.PREFIX + format.format(message)))
-        else player.sendMessage(text(Variables.PREFIX + format.format(args, message)))
+        if (args == null) player.sendMessage(Variables.PREFIX + format.format(message))
+        else player.sendMessage(Variables.PREFIX + format.format(args, message))
     }
 
     fun sendCommandSender(sender: CommandSender, message: String, args: String? = null) {
-        if (args == null) sender.sendMessage(text(Variables.PREFIX + format.format(message)))
-        else sender.sendMessage(text(Variables.PREFIX + format.format(args, message)))
+        if (args == null) sender.send(Variables.PREFIX + format.format(message))
+        else sender.send(Variables.PREFIX + format.format(args, message))
     }
 
 }

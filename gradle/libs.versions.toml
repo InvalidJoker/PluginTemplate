@@ -1,0 +1,25 @@
+[versions]
+userdev = "2.0.0-beta.17"
+pluginyml = "0.6.0"
+commandapi = "11.0.0"
+paper = "1.21.8"
+luckperms = "5.4"
+kotlinx-serialization-json = "1.9.0"
+kotlinx-coroutines = "1.10.2"
+run-paper = "3.0.2"
+kutils = "1.21.6-SNAPSHOT"
+
+[libraries]
+commandapi-bukkit-shade = { group = "dev.jorel", name = "commandapi-paper-shade", version.ref = "commandapi" }
+commandapi-bukkit-kotlin = { group = "dev.jorel", name = "commandapi-kotlin-paper", version.ref = "commandapi" }
+luckperms =  { group = "net.luckperms", name = "api", version.ref = "luckperms" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+
+kutils-paper = { group = "dev.invalidjoker.kutils", name = "paper", version.ref = "kutils" }
+kutils-adventure = { group = "dev.invalidjoker.kutils", name = "adventure", version.ref = "kutils" }
+
+[plugins]
+userdev = { id = "io.papermc.paperweight.userdev", version.ref = "userdev" }
+pluginyml-paper = { id = "net.minecrell.plugin-yml.paper", version.ref = "pluginyml" }
+run-paper = { id = "xyz.jpenilla.run-paper", version.ref = "run-paper" }

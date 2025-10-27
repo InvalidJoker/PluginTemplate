@@ -1,10 +1,9 @@
 plugins {
-    kotlin("jvm") version "2.1.0"
-    alias(libs.plugins.paper.yml)
-    alias(libs.plugins.run.server)
-    alias(libs.plugins.paperweight)
-    alias(libs.plugins.shadow)
-    kotlin("plugin.serialization") version "2.1.0"
+    kotlin("jvm") version "2.2.0"
+    kotlin("plugin.serialization") version "2.2.0"
+    alias(libs.plugins.userdev)
+    alias(libs.plugins.pluginyml.paper)
+    alias(libs.plugins.run.paper)
 }
 
 group = "de.joker"
@@ -12,32 +11,42 @@ version = "1.0.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    maven("https://central.sonatype.com/repository/maven-snapshots/")
+    maven("https://nexus.fruxz.dev/repository/public/")
+    maven("https://repo.codemc.org/repository/maven-public/")
     maven("https://repo.papermc.io/repository/maven-public/")
 }
 
-dependencies {
-    paperweight.paperDevBundle(libs.versions.minecraftVersion.get() + "-R0.1-SNAPSHOT")
+paperweight {
+    reobfArtifactConfiguration = io.papermc.paperweight.userdev
+        .ReobfArtifactConfiguration.MOJANG_PRODUCTION
+}
 
-    paperLibrary(libs.serialization)
+dependencies {
+    paperweight.paperDevBundle(libs.versions.paper.get() + "-R0.1-SNAPSHOT")
+
+    paperLibrary(libs.kotlinx.serialization.json)
+    paperLibrary(kotlin("stdlib"))
     paperLibrary(kotlin("reflect"))
+
+    paperLibrary(libs.kutils.paper)
+    paperLibrary(libs.kutils.adventure)
+
+    paperLibrary(libs.commandapi.bukkit.shade)
+    paperLibrary(libs.commandapi.bukkit.kotlin)
 }
 
 tasks {
-
     build {
         dependsOn(reobfJar)
     }
 
     runServer {
-        minecraftVersion(libs.versions.minecraftVersion.get())
+        minecraftVersion(libs.versions.paper.get())
     }
 
-    reobfJar {
-        dependsOn(shadowJar)
-    }
-
-    shadowJar {
-        archiveFileName.set("PluginTemplate.jar")
+    jar {
+        archiveFileName.set(project.name + ".jar")
     }
 }
 kotlin {
@@ -45,10 +54,9 @@ kotlin {
 }
 
 paper {
-    main = "de.joker.template.PluginInstance"
+    main = "de.joker.template.PluginTemplate"
     loader = "de.joker.template.DependencyLoader"
-    bootstrapper = "de.joker.template.CommandBootstrapper"
-    apiVersion = "1.19"
+    apiVersion = "1.21"
     name = "PluginTemplate"
     authors = listOf("InvalidJoker")
     generateLibrariesJson = true

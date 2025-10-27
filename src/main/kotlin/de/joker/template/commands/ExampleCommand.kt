@@ -1,19 +1,23 @@
 package de.joker.template.commands
 
-import com.mojang.brigadier.Command
-import com.mojang.brigadier.tree.LiteralCommandNode
-import de.joker.template.extensions.sendInfo
-import de.joker.template.model.CommandBuilder
-import io.papermc.paper.command.brigadier.CommandSourceStack
-import io.papermc.paper.command.brigadier.Commands
+import de.joker.template.extensions.sendError
+import de.joker.template.extensions.sendSuccess
+import dev.jorel.commandapi.kotlindsl.commandTree
+import dev.jorel.commandapi.kotlindsl.literalArgument
+import dev.jorel.commandapi.kotlindsl.playerExecutor
 
-class ExampleCommand : CommandBuilder {
-    override fun register(): LiteralCommandNode<CommandSourceStack> {
-        return Commands.literal("template")
-            .executes { ctx ->
-                ctx.source.sender.sendInfo("Hello World!")
-                Command.SINGLE_SUCCESS
+class ExampleCommand {
+    private val command = commandTree("example") {
+        literalArgument("success") {
+            playerExecutor { player, _ ->
+                player.sendSuccess("Works as expected!")
             }
-            .build()
+        }
+
+        literalArgument("error") {
+            playerExecutor { player, _ ->
+                player.sendError("Something went wrong!")
+            }
+        }
     }
 }
