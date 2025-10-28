@@ -1,5 +1,5 @@
 [versions]
-userdev = "2.0.0-beta.17"
+userdev = "2.0.0-SNAPSHOT"
 pluginyml = "0.6.0"
 commandapi = "11.0.0"
 paper = "1.21.8"
