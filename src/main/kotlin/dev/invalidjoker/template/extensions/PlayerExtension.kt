@@ -1,8 +1,7 @@
-package de.joker.template.extensions
+package dev.invalidjoker.template.extensions
 
-import de.joker.template.model.MessageFormat
+import dev.invalidjoker.template.model.MessageFormat
 import org.bukkit.command.CommandSender
-import java.util.logging.Logger
 
 
 fun CommandSender.sendMessageFormated(message: String, format: MessageFormat, args: String? = null) = format.sendCommandSender(this, message, args)

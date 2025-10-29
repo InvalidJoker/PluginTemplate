@@ -1,4 +1,4 @@
-package de.joker.template;
+package dev.invalidjoker.template;
 
 import com.google.gson.Gson;
 import io.papermc.paper.plugin.loader.PluginClasspathBuilder;

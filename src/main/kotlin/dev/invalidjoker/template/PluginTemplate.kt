@@ -1,7 +1,7 @@
-package de.joker.template
+package dev.invalidjoker.template
 
 import de.joker.kutils.paper.KPlugin
-import de.joker.template.commands.ExampleCommand
+import dev.invalidjoker.template.commands.ExampleCommand
 import dev.jorel.commandapi.CommandAPI
 import dev.jorel.commandapi.CommandAPIPaperConfig
 

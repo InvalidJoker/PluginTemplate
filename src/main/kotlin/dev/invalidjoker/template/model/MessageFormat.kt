@@ -1,4 +1,4 @@
-package de.joker.template.model
+package dev.invalidjoker.template.model
 
 import de.joker.kutils.adventure.send
 import org.bukkit.command.CommandSender

@@ -1,7 +1,7 @@
-package de.joker.template.commands
+package dev.invalidjoker.template.commands
 
-import de.joker.template.extensions.sendError
-import de.joker.template.extensions.sendSuccess
+import dev.invalidjoker.template.extensions.sendError
+import dev.invalidjoker.template.extensions.sendSuccess
 import dev.jorel.commandapi.kotlindsl.commandTree
 import dev.jorel.commandapi.kotlindsl.literalArgument
 import dev.jorel.commandapi.kotlindsl.playerExecutor

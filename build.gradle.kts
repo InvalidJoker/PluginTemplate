@@ -6,7 +6,7 @@ plugins {
     alias(libs.plugins.run.paper)
 }
 
-group = "de.joker"
+group = "dev.invalidjoker"
 version = "1.0.0-SNAPSHOT"
 
 repositories {
@@ -53,8 +53,8 @@ kotlin {
 }
 
 paper {
-    main = "de.joker.template.PluginTemplate"
-    loader = "de.joker.template.DependencyLoader"
+    main = "dev.invalidjoker.template.PluginTemplate"
+    loader = "dev.invalidjoker.template.DependencyLoader"
     apiVersion = "1.21"
     name = "PluginTemplate"
     authors = listOf("InvalidJoker")
