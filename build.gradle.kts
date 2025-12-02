@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.userdev)
     alias(libs.plugins.pluginyml.paper)
     alias(libs.plugins.run.paper)
+    alias(libs.plugins.shadow)
 }
 
 group = "dev.invalidjoker"
@@ -24,27 +25,27 @@ paperweight {
 dependencies {
     paperweight.paperDevBundle(libs.versions.paper.get() + "-R0.1-SNAPSHOT")
 
-    paperLibrary(libs.kotlinx.serialization.json)
-    paperLibrary(kotlin("stdlib"))
+    implementation(libs.kotlinx.serialization.json)
 
-    paperLibrary(libs.glue.paper)
-    paperLibrary(libs.glue.core)
+    implementation(libs.glue.paper)
+    implementation(libs.glue.core)
 
-    paperLibrary(libs.commandapi.bukkit.shade)
-    paperLibrary(libs.commandapi.bukkit.kotlin)
+    implementation(libs.commandapi.bukkit.shade)
+    implementation(libs.commandapi.bukkit.kotlin)
 }
 
 tasks {
     build {
-        dependsOn(reobfJar)
+        dependsOn(shadowJar)
     }
 
     runServer {
         minecraftVersion(libs.versions.paper.get())
     }
 
-    jar {
-        archiveFileName.set(project.name + ".jar")
+    shadowJar {
+        dependsOn("processResources")
+        archiveBaseName.set(project.name)
     }
 }
 
@@ -61,20 +62,10 @@ kotlin {
     }
 }
 
-sourceSets {
-    main {
-        java.srcDirs("src")
-    }
-    test {
-        java.srcDirs("test")
-    }
-}
-
 paper {
     main = "dev.invalidjoker.template.PluginTemplate"
-    loader = "dev.invalidjoker.template.DependencyLoader"
     apiVersion = "1.21"
     name = "PluginTemplate"
+    version = project.version.toString()
     authors = listOf("InvalidJoker")
-    generateLibrariesJson = true
 }

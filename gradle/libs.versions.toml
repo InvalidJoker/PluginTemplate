@@ -8,6 +8,7 @@ kotlinx-serialization-json = "1.9.0"
 kotlinx-coroutines = "1.10.2"
 run-paper = "3.0.2"
 glue = "2025.11-SNAPSHOT"
+shadow = "9.2.2"
 
 [libraries]
 commandapi-bukkit-shade = { group = "dev.jorel", name = "commandapi-paper-shade", version.ref = "commandapi" }
@@ -23,3 +24,4 @@ glue-core = { group = "dev.invalidjoker.glue", name = "core", version.ref = "glu
 userdev = { id = "io.papermc.paperweight.userdev", version.ref = "userdev" }
 pluginyml-paper = { id = "net.minecrell.plugin-yml.paper", version.ref = "pluginyml" }
 run-paper = { id = "xyz.jpenilla.run-paper", version.ref = "run-paper" }
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
