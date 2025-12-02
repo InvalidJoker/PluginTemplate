@@ -12,7 +12,6 @@ version = "1.0.0-SNAPSHOT"
 repositories {
     mavenCentral()
     maven("https://central.sonatype.com/repository/maven-snapshots/")
-    maven("https://nexus.fruxz.dev/repository/public/")
     maven("https://repo.codemc.org/repository/maven-public/")
     maven("https://repo.papermc.io/repository/maven-public/")
 }
@@ -28,8 +27,8 @@ dependencies {
     paperLibrary(libs.kotlinx.serialization.json)
     paperLibrary(kotlin("stdlib"))
 
-    paperLibrary(libs.kutils.paper)
-    paperLibrary(libs.kutils.adventure)
+    paperLibrary(libs.glue.paper)
+    paperLibrary(libs.glue.core)
 
     paperLibrary(libs.commandapi.bukkit.shade)
     paperLibrary(libs.commandapi.bukkit.kotlin)
@@ -48,8 +47,27 @@ tasks {
         archiveFileName.set(project.name + ".jar")
     }
 }
+
 kotlin {
     jvmToolchain(21)
+
+    sourceSets {
+        main {
+            kotlin.srcDirs("src")
+        }
+        test {
+            kotlin.srcDirs("test")
+        }
+    }
+}
+
+sourceSets {
+    main {
+        java.srcDirs("src")
+    }
+    test {
+        java.srcDirs("test")
+    }
 }
 
 paper {

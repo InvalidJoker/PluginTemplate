@@ -7,7 +7,7 @@ luckperms = "5.5"
 kotlinx-serialization-json = "1.9.0"
 kotlinx-coroutines = "1.10.2"
 run-paper = "3.0.2"
-kutils = "1.21.6-SNAPSHOT"
+glue = "2025.11-SNAPSHOT"
 
 [libraries]
 commandapi-bukkit-shade = { group = "dev.jorel", name = "commandapi-paper-shade", version.ref = "commandapi" }
@@ -16,8 +16,8 @@ luckperms =  { group = "net.luckperms", name = "api", version.ref = "luckperms" 
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 
-kutils-paper = { group = "dev.invalidjoker.kutils", name = "paper", version.ref = "kutils" }
-kutils-adventure = { group = "dev.invalidjoker.kutils", name = "adventure", version.ref = "kutils" }
+glue-paper = { group = "dev.invalidjoker.glue", name = "paper", version.ref = "glue" }
+glue-core = { group = "dev.invalidjoker.glue", name = "core", version.ref = "glue" }
 
 [plugins]
 userdev = { id = "io.papermc.paperweight.userdev", version.ref = "userdev" }
