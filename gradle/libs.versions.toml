@@ -1,19 +1,17 @@
 [versions]
 userdev = "2.0.0-beta.19"
 pluginyml = "0.6.0"
-commandapi = "11.0.0"
-paper = "1.21.8"
-luckperms = "5.5"
-kotlinx-serialization-json = "1.9.0"
-kotlinx-coroutines = "1.10.2"
+commandapi = "11.2.0"
+paper = "1.21.11"
+kotlinx-serialization-json = "1.11.0"
+kotlinx-coroutines = "1.11.0"
 run-paper = "3.0.2"
-glue = "2025.11-SNAPSHOT"
-shadow = "9.2.2"
+glue = "2026.5-SNAPSHOT"
+shadow = "9.4.2"
 
 [libraries]
 commandapi-bukkit-shade = { group = "dev.jorel", name = "commandapi-paper-shade", version.ref = "commandapi" }
 commandapi-bukkit-kotlin = { group = "dev.jorel", name = "commandapi-kotlin-paper", version.ref = "commandapi" }
-luckperms =  { group = "net.luckperms", name = "api", version.ref = "luckperms" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 

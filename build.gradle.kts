@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "2.2.21"
-    kotlin("plugin.serialization") version "2.2.21"
+    kotlin("jvm") version "2.4.0"
+    kotlin("plugin.serialization") version "2.4.0"
     alias(libs.plugins.userdev)
     alias(libs.plugins.pluginyml.paper)
     alias(libs.plugins.run.paper)
@@ -12,7 +12,10 @@ version = "1.0.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
-    maven("https://central.sonatype.com/repository/maven-snapshots/")
+    maven {
+        name = "invalidjokerSnapshots"
+        url = uri("https://maven.invalidjoker.dev/snapshots")
+    }
     maven("https://repo.codemc.org/repository/maven-public/")
     maven("https://repo.papermc.io/repository/maven-public/")
 }
@@ -50,7 +53,7 @@ tasks {
 }
 
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(25)
 
     sourceSets {
         main {
