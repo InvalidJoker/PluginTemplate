@@ -1,8 +1,8 @@
 [versions]
-userdev = "2.0.0-beta.19"
-pluginyml = "0.6.0"
+userdev = "2.0.0-beta.21"
+pluginyml = "0.9.0"
 commandapi = "11.2.0"
-paper = "1.21.11"
+paper = "26.1.2"
 kotlinx-serialization-json = "1.11.0"
 kotlinx-coroutines = "1.11.0"
 run-paper = "3.0.2"
@@ -20,6 +20,6 @@ glue-core = { group = "dev.invalidjoker.glue", name = "core", version.ref = "glu
 
 [plugins]
 userdev = { id = "io.papermc.paperweight.userdev", version.ref = "userdev" }
-pluginyml-paper = { id = "net.minecrell.plugin-yml.paper", version.ref = "pluginyml" }
+pluginyml-paper = { id = "de.eldoria.plugin-yml.paper", version.ref = "pluginyml" }
 run-paper = { id = "xyz.jpenilla.run-paper", version.ref = "run-paper" }
 shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }

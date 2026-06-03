@@ -42,7 +42,8 @@ bin/
 .DS_Store
 
 ### Run server ignore
-run-*
 run/
 .kotlin/
 .idea/
+
+!run/eula.txt

@@ -12,10 +12,7 @@ version = "1.0.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
-    maven {
-        name = "invalidjokerSnapshots"
-        url = uri("https://maven.invalidjoker.dev/snapshots")
-    }
+    maven("https://maven.invalidjoker.dev/snapshots")
     maven("https://repo.codemc.org/repository/maven-public/")
     maven("https://repo.papermc.io/repository/maven-public/")
 }
@@ -26,7 +23,7 @@ paperweight {
 }
 
 dependencies {
-    paperweight.paperDevBundle(libs.versions.paper.get() + "-R0.1-SNAPSHOT")
+    paperweight.paperDevBundle(libs.versions.paper.get() + ".build.+")
 
     implementation(libs.kotlinx.serialization.json)
 
@@ -67,7 +64,7 @@ kotlin {
 
 paper {
     main = "dev.invalidjoker.template.PluginTemplate"
-    apiVersion = "1.21"
+    apiVersion = libs.versions.paper.get()
     name = "PluginTemplate"
     version = project.version.toString()
     authors = listOf("InvalidJoker")
