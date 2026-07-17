@@ -7,7 +7,7 @@ kotlinx-serialization-json = "1.11.0"
 kotlinx-coroutines = "1.11.0"
 run-paper = "3.0.2"
 glue = "2026.5-SNAPSHOT"
-shadow = "9.4.2"
+shadow = "9.6.0"
 
 [libraries]
 commandapi-bukkit-shade = { group = "dev.jorel", name = "commandapi-paper-shade", version.ref = "commandapi" }
